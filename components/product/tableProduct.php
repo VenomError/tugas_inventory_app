@@ -34,7 +34,7 @@ $data  = $product->all();
                             <td><?= $product['category_name'] ?></td>
                             <td>Rp <?= number_format($product['price'], 2) ?></td>
                             <td><?= $product['stock'] ?></td>
-                            <td><span class="badge bg-info"><?= strtoupper($product['status_stock']) ?></span></td>
+                            <td><span class="badge bg-<?= statusStockColor($product['status_stock']) ?>"><?= strtoupper($product['status_stock']) ?></span></td>
                             <td>
                                 <?php
                                 if ($product['in_stock'] == true) {
@@ -59,7 +59,9 @@ $data  = $product->all();
                                         data-category-id="<?= $product['category_id'] ?>"
                                         data-product-name="<?= $product['name'] ?>"
                                         data-price="<?= $product['price'] ?>"
-                                        data-stock="<?= $product['stock'] ?>"><i class="las la-pen text-secondary fs-18"></i></button>
+                                        data-stock="<?= $product['stock'] ?>"
+                                        data-status-stock="<?= $product['status_stock'] ?>">
+                                        <i class="las la-pen text-secondary fs-18"></i></button>
                                     <button class="btn " onclick="deleteProduct(<?= $product['id'] ?>)"><i class="las la-trash-alt text-secondary fs-18"></i></button>
                                 </div>
                             </td>

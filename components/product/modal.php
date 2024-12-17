@@ -28,6 +28,7 @@
                             </div>
                         </div>
 
+
                         <div class="mb-2">
                             <label for="product_name" class="form-label">Product Name</label>
                             <input type="text" class="form-control" required name="product_name" id="product_name" placeholder="Product Name">
@@ -52,6 +53,20 @@
                             </div>
                         </div>
 
+                        <div class="mb-2">
+                            <label for="status_stock" class="form-label">Stock Status</label>
+                            <select name="status_stock" id="status_stock" class="form-control" required>
+                                <option value="">Select Status Stock</option>
+                                <option value="tersedia">Tersedia</option>
+                                <option value="hampir habis">Hampir Habis</option>
+                                <option value="habis">Habis</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <small>Please select a status.</small>
+                            </div>
+                        </div>
+
+
                         <button type="submit" class="btn btn-primary" id="saveButton">Create</button>
                     </form><!--end form-->
                 </div><!--end row-->
@@ -75,7 +90,7 @@
         }
 
         // Fungsi untuk membuka modal dalam mode Edit
-        function openEditModal(id, category_id, product_name, price, stock) {
+        function openEditModal(id, category_id, product_name, price, stock, status_stock) {
             $('#createProductModalLabel').text('Edit Product');
             $('#saveButton').text('Update');
             $('#productId').val(id);
@@ -83,6 +98,7 @@
             $('#product_name').val(product_name);
             $('#price').val(price);
             $('#stock').val(stock);
+            $('#status_stock').val(status_stock);
             $('#createProductModal').modal('show');
         }
 
@@ -102,12 +118,14 @@
             const product_name = $('#product_name').val().trim();
             const price = $('#price').val().trim();
             const stock = $('#stock').val().trim();
+            const status_stock = $('#status_stock').val().trim();
 
             const formData = {
                 category_id: category_id,
                 product_name: product_name,
                 price: parseFloat(price),
-                stock: parseInt(stock)
+                stock: parseInt(stock),
+                status_stock: status_stock,
             };
 
             let url = '/request/product/create.php';
@@ -155,7 +173,8 @@
             const product_name = $(this).data('product-name');
             const price = $(this).data('price');
             const stock = $(this).data('stock');
-            openEditModal(id, category_id, product_name, price, stock);
+            const status_stock = $(this).data('status-stock');
+            openEditModal(id, category_id, product_name, price, stock, status_stock);
         });
     });
 </script>

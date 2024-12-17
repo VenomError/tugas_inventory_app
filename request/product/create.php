@@ -6,6 +6,7 @@ try {
     $product->category_id = $_POST['category_id'];
     $product->name = $_POST['product_name'];
     $product->stock = (int)$_POST['stock'];
+    $product->status_stock = $_POST['status_stock'];
     $product->price = (float)$_POST['price'];
 
 
