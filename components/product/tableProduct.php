@@ -12,6 +12,7 @@ $data  = $product->all();
             <table class="table mb-0 checkbox-all datatable-table" id="tableListproduct">
                 <thead>
                     <tr>
+                        <th class="ps-0" data-sortable="true" style="width: 26.774483378256964%;"><button class="datatable-sorter">Code</button></th>
                         <th class="ps-0" data-sortable="true" style="width: 26.774483378256964%;"><button class="datatable-sorter">Product Name</button></th>
                         <th data-sortable="true" style="width: 11.500449236298294%;"><button class="datatable-sorter">Category</button></th>
                         <th data-sortable="true" style="width: 8.176100628930817%;"><button class="datatable-sorter">Price</button></th>
@@ -25,6 +26,10 @@ $data  = $product->all();
                 <tbody>
                     <?php foreach ($data as $product) : ?>
                         <tr>
+                            <td>
+                                <span id="clipboardInput<?= $product['id'] ?>"><?= $product['id'] ?></span>
+                                <button class="btn btn-secondary btn-sm " type="button" id="button-addon2" data-clipboard-action="copy" data-clipboard-target="#clipboardInput<?= $product['id'] ?>"><i class="far fa-copy "></i></button>
+                            </td>
                             <td class="ps-0">
                                 <p class="d-inline-block align-middle mb-0">
                                     <a href="ecommerce-order-details.html" class="d-inline-block align-middle mb-0 product-name"><?= $product['name'] ?></a>
@@ -62,7 +67,7 @@ $data  = $product->all();
                                         data-stock="<?= $product['stock'] ?>"
                                         data-status-stock="<?= $product['status_stock'] ?>">
                                         <i class="las la-pen text-secondary fs-18"></i></button>
-                                    <button class="btn " onclick="deleteProduct(<?= $product['id'] ?>)"><i class="las la-trash-alt text-secondary fs-18"></i></button>
+                                    <button class="btn " onclick="deleteProduct('<?= $product['id'] ?>')"><i class="las la-trash-alt text-secondary fs-18"></i></button>
                                 </div>
                             </td>
                         </tr>

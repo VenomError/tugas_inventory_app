@@ -54,11 +54,13 @@ class Product
 
     public function create()
     {
+        $this->id = generateUUID();
 
         $query = "INSERT INTO product
-        (category_id,name,stock,in_stock,status_stock,price)
+        (id,category_id,name,stock,in_stock,status_stock,price)
         VALUES
         (
+        '{$this->id}',
         '{$this->category_id}',
         '{$this->name}',
         '{$this->stock}',

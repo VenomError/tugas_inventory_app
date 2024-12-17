@@ -49,9 +49,15 @@
                         <span>Inventory</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/inventory/stock" aria-controls="sidebarDashboards">
-                            <i class="fas fa-box menu-icon"></i>
-                            <span>Stock</span>
+                        <a class="nav-link" href="/stock/stock_masuk" aria-controls="sidebarDashboards">
+                            <i class="fas fa-arrow-alt-circle-down menu-icon"></i>
+                            <span>Stock Masuk</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/stock/stock_keluar" aria-controls="sidebarDashboards">
+                            <i class="fas fa-arrow-alt-circle-up menu-icon"></i>
+                            <span>Stock Keluar</span>
                         </a>
                     </li>
 
