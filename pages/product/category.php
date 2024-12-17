@@ -10,7 +10,7 @@
                         <div class="row g-2">
 
                             <div class="col-auto">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCategoryModal"><i class="fa-solid fa-plus me-1"></i> Add Category</button>
+                                <button type="button" class="btn btn-primary" id="createButton"><i class="fa-solid fa-plus me-1"></i> Add Category</button>
                             </div><!--end col-->
                         </div>
                     </div><!--end col-->

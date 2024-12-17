@@ -4,16 +4,17 @@ require_once __DIR__ . "/../../loadAll.php";
 try {
     $category = new Category();
     $category->name =  $_POST['name'];
+    $category->id =  $_POST['id'];
 
-    if (empty($category->name)) {
-        throw new Exception('Nama Category Tidak Boleh Kosong');
+    if (empty($category->name) && empty($category->id)) {
+        throw new Exception('Nama Category atau ID Tidak Boleh Kosong');
     }
 
-    $category->create();
+    $category->update();
 
     echo json_encode([
         'status' => 'success',
-        'message' => 'Created Category Success'
+        'message' => 'Updated Category Success'
     ]);
 } catch (\Throwable $th) {
     echo json_encode([
