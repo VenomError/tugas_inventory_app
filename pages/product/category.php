@@ -23,4 +23,4 @@
         </div>
     </div> <!-- end col -->
 </div>
-<?= component('category/create') ?>
+<?= component('category/modal') ?>
