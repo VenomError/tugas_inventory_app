@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-startbar="light" data-bs-theme="light">
-
-
-<!-- Mirrored from mannatthemes.com/rizz/default/pages-starter.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Nov 2024 13:54:34 GMT -->
+<html lang="en" dir="ltr" data-startbar="light" data-bs-theme="dark">
 
 <head>
 
 
     <meta charset="utf-8" />
-    <title>Rizz | Rizz - Admin & Dashboard Template</title>
+    <title>Inventory App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="author" />
@@ -29,6 +26,7 @@
 
 
     <link href="/assets/libs/simple-datatables/style.css" rel="stylesheet" type="text/css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -59,7 +57,7 @@
 
     <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- datatables -->
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
@@ -72,7 +70,23 @@
     <script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
 
 
-    <script src="/assets/js/app.js"></script>
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
     <script>
         $(document).ready(function() {
@@ -83,8 +97,11 @@
                     }
                 }
             });
+            new DataTable('#tableListCategory');
         });
     </script>
+
+    <script src="/assets/js/app.js"></script>
 </body>
 <!--end body-->
 

@@ -16,8 +16,5 @@ $dirModel = __DIR__ . '/model';
 $listModel = array_diff(scandir($dirModel), array('..', '.'));
 
 foreach ($listModel as $key => $model) {
-    require_once "{$dirModel}/{$model}";
+    require_once  "{$dirModel}/{$model}";
 }
-
-$user = new User();
-$user->create();

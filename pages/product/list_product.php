@@ -61,7 +61,7 @@
                             </div><!--end col-->
 
                             <div class="col-auto">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBoard"><i class="fa-solid fa-plus me-1"></i> Add Product</button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createProductModal"><i class="fa-solid fa-plus me-1"></i> Add Product</button>
                             </div><!--end col-->
                         </form>
                     </div><!--end col-->
@@ -74,3 +74,4 @@
         </div>
     </div> <!-- end col -->
 </div>
+<?= component('product/create', ['id' => 'createProductModal']) ?>
