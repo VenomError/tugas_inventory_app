@@ -15,13 +15,6 @@
                 </li>
             </ul>
             <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">
-                <li class="dropdown topbar-item">
-                    <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#"
-                        role="button" aria-haspopup="false" aria-expanded="false">
-                        <i class="icofont-bell-alt"></i>
-                        <span class="alert-badge"></span>
-                    </a>
-                </li>
 
                 <li class="dropdown topbar-item">
                     <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#"

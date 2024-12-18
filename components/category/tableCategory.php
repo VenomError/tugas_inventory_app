@@ -16,9 +16,9 @@ $data = $category->all();
                     <?php foreach ($data as $category) : ?>
                         <tr>
                             <td class="ps-0">
-                                <img src="assets/images/products/04.png" alt="" height="40">
+
                                 <p class="d-inline-block align-middle mb-0">
-                                    <a href="ecommerce-order-details.html" class="d-inline-block align-middle mb-0 product-name"><?= ucwords($category['name']) ?></a>
+                                    <span class=" text-info d-inline-block align-middle mb-0 product-name"><?= ucwords($category['name']) ?></span>
                                     <br>
                                 </p>
                             </td>

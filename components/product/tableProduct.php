@@ -32,7 +32,7 @@ $data  = $product->all();
                             </td>
                             <td class="ps-0">
                                 <p class="d-inline-block align-middle mb-0">
-                                    <a href="ecommerce-order-details.html" class="d-inline-block align-middle mb-0 product-name"><?= $product['name'] ?></a>
+                                    <span class="text-info d-inline-block align-middle mb-0 product-name"><?= $product['name'] ?></span>
                                     <br>
                                 </p>
                             </td>
