@@ -1,7 +1,7 @@
 <?php
 set_layout('auth');
 set_title('login admin');
-
+onlyGuest();
 ?>
 <div class="card-body p-0 bg-black auth-header-box rounded-top">
     <div class="text-center p-3">
@@ -14,7 +14,7 @@ set_title('login admin');
     </div>
 </div>
 <div class="card-body pt-0">
-    <form class="my-4" action="https://mannatthemes.com/rizz/default/index.html">
+    <form class="my-4" id="formLogin">
         <div class="form-group mb-2">
             <label class="form-label" for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email"
@@ -30,7 +30,7 @@ set_title('login admin');
         <div class="form-group mb-0 row">
             <div class="col-12">
                 <div class="d-grid mt-3">
-                    <button class="btn btn-primary" type="button">Log In <i
+                    <button class="btn btn-primary" type="submit">Log In <i
                             class="fas fa-sign-in-alt ms-1"></i></button>
                 </div>
             </div><!--end col-->
@@ -40,3 +40,41 @@ set_title('login admin');
         <p class="text-muted">Don't have an account ? <a href="/register" class="text-primary ms-2">Free Register</a></p>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        $('#formLogin').submit(function(event) {
+            event.preventDefault();
+
+            const email = $('#email').val().trim();
+            const password = $('#userpassword').val().trim();
+
+            const formData = {
+                email: email,
+                password: password,
+            };
+
+            $.ajax({
+                    url: '/request/loginRequest.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                })
+                .done(function(res) {
+                    if (res.status === 'success') {
+                        toastr.success(res.message, 'Berhasil');
+                        setTimeout(function() {
+                            window.location.href = '/';
+                        }, 1000);
+                    } else {
+                        $('#formLogin')[0].reset();
+                        toastr.error(res.message, 'Gagal');
+
+                    }
+                })
+                .fail(function(xhr, status, error) {
+                    console.log(xhr.responseText); // Lihat respons lengkap di console
+                    toastr.error('Terjadi kesalahan: ' + error, 'Error');
+                });
+        });
+    });
+</script>

@@ -15,8 +15,6 @@
             .done(function(res) {
                 if (res.status === 'success') {
 
-                    console.log(res); // Lihat seluruh respons di console
-                    console.log(res.data); // Lihat isi dari res.data
 
                     // Asumsikan res.data berisi array dengan label dan data stok
                     const labels = res.data.map(item => item.name); // Misalnya, 'item.name' adalah nama produk

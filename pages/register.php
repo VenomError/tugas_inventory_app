@@ -1,7 +1,7 @@
 <?php
 set_layout('auth');
 set_title('register admin');
-
+onlyGuest();
 ?>
 <div class="card-body p-0 bg-black auth-header-box rounded-top">
     <div class="text-center p-3">
@@ -14,7 +14,7 @@ set_title('register admin');
     </div>
 </div>
 <div class="card-body pt-0">
-    <form class="my-4" action="https://mannatthemes.com/rizz/default/index.html">
+    <form class="my-4" id="registerForm">
         <div class="form-group mb-2">
             <label class="form-label" for="full_name">Full Name</label>
             <input type="text" class="form-control" id="full_name" name="full_name"
@@ -36,7 +36,7 @@ set_title('register admin');
         <div class="form-group mb-0 row">
             <div class="col-12">
                 <div class="d-grid mt-3">
-                    <button class="btn btn-primary" type="button">Register <i
+                    <button class="btn btn-primary" type="submit">Register <i
                             class="fas fa-sign-in-alt ms-1"></i></button>
                 </div>
             </div><!--end col-->
@@ -46,3 +46,44 @@ set_title('register admin');
         <p class="text-muted">Already have an account ? <a href="/login" class="text-primary ms-2">Login</a></p>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#registerForm').submit(function(event) {
+            event.preventDefault();
+
+
+
+            const name = $('#full_name').val().trim();
+            const email = $('#email').val().trim();
+            const password = $('#userpassword').val().trim();
+
+            const formData = {
+                name: name,
+                email: email,
+                password: password,
+            };
+
+            $.ajax({
+                    url: '/request/registerRequest.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                })
+                .done(function(res) {
+                    if (res.status === 'success') {
+                        toastr.success(res.message, 'Berhasil');
+                        setTimeout(function() {
+                            window.location.href = '/login';
+                        }, 1000);
+                    } else {
+                        toastr.error(res.message, 'Gagal');
+                    }
+                })
+                .fail(function(xhr, status, error) {
+                    console.log(xhr.responseText); // Lihat respons lengkap di console
+                    toastr.error('Terjadi kesalahan: ' + error, 'Error');
+                });
+        });
+    });
+</script>

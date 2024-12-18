@@ -15,11 +15,17 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <!-- App css -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 </head>
 
@@ -34,6 +40,7 @@
                     <div class="row">
                         <div class="col-lg-4 mx-auto">
                             <div class="card">
+
                                 <?= $content ?>
                                 <!--end card-body-->
                             </div><!--end card-->
@@ -45,6 +52,7 @@
         <!--end row-->
     </div>
     <!-- container -->
+
 </body>
 <!--end body-->
 
