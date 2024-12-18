@@ -21,3 +21,9 @@ function renderPage($url)
         echo "File Not Found In : pages/{$url}.php";
     }
 }
+
+function redirect($target)
+{
+    header("Location: $target", true, 303);
+    die();
+}
