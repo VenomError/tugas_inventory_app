@@ -21,9 +21,6 @@
                         <i class="icofont-bell-alt"></i>
                         <span class="alert-badge"></span>
                     </a>
-                    <div class="dropdown-menu stop dropdown-menu-end dropdown-lg py-0">
-                        <?= component('notification') ?>
-                    </div>
                 </li>
 
                 <li class="dropdown topbar-item">

@@ -114,4 +114,15 @@ class Product
     {
         return getConn()->query("UPDATE product SET stock='$qty' WHERE id='$id'");
     }
+
+    public function whereStatus($status_stock)
+    {
+        return getConn()->query("SELECT * FROM product 
+        WHERE status_stock='$status_stock'");
+    }
+
+    public function getForChart()
+    {
+        return getConn()->query("SELECT name,stock FROM product")->fetch_all(MYSQLI_ASSOC);
+    }
 }

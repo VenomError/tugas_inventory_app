@@ -28,6 +28,8 @@
     <link href="/assets/libs/simple-datatables/style.css" rel="stylesheet" type="text/css" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
     <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 
 <body>
