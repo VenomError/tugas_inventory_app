@@ -28,7 +28,7 @@ class StockHistory
 
     public function stockOut()
     {
-        $this->type = "stockOut";
+        $this->type = "stock_out";
 
         $product = new Product();
 

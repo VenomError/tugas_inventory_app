@@ -99,6 +99,13 @@
                     }
                 }
             });
+            new DataTable('#tableStockHistory', {
+                layout: {
+                    topStart: {
+                        buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+                    }
+                }
+            });
             new DataTable('#tableListCategory');
         });
     </script>

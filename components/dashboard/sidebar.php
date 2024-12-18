@@ -61,15 +61,6 @@
                         </a>
                     </li>
 
-                    <li class="menu-label pt-0 mt-2">
-                        <span>Report</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/report" aria-controls="sidebarDashboards">
-                            <i class="fas fa-file-archive menu-icon"></i>
-                            <span>Report</span>
-                        </a>
-                    </li>
 
                 </ul><!--end navbar-nav--->
             </div>

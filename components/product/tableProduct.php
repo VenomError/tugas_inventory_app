@@ -49,7 +49,7 @@ $data  = $product->all();
                                 }
                                 ?>
                                 <div class="form-check form-switch form-switch-success">
-                                    <input class="form-check-input" type="checkbox" id="inStockSwitch" onchange="switchInStock( <?= $product['id'] ?>,<?= $product['in_stock'] ?>)" <?= $checked ? 'checked' : '' ?>>
+                                    <input class="form-check-input" type="checkbox" id="inStockSwitch" onchange="switchInStock( '<?= $product['id'] ?>',<?= $product['in_stock'] ?>)" <?= $checked ? 'checked' : '' ?>>
                                     <label class="form-check-label" for="inStockSwitch">
                                         <?= $checked ? 'In Stock' : 'Out Stock' ?>
                                     </label>
