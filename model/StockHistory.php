@@ -61,4 +61,14 @@ class StockHistory
         )
         ");
     }
+
+    public function all()
+    {
+        return getConn()->query("SELECT stock_history.* ,product.name as product_name 
+        FROM stock_history
+        INNER JOIN product
+        ON stock_history.product_id=product.id
+        ")
+            ->fetch_all(MYSQLI_ASSOC);
+    }
 }

@@ -15,6 +15,20 @@ function statusStockColor($status)
     }
 }
 
+function stockTypeColor($type)
+{
+
+    switch ($type) {
+
+        case "stock_in":
+            return "success";
+        case "stock_out":
+            return "danger";
+        default:
+            return "info";
+    }
+}
+
 
 function generateUUID()
 {
