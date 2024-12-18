@@ -104,4 +104,14 @@ class Product
     {
         return getConn()->query("DELETE FROM product WHERE id='{$this->id}'");
     }
+
+    public function find($id)
+    {
+        return getConn()->query("SELECT * FROM product WHERE id='$id'")->fetch_object() ?: null;
+    }
+
+    public function stockIn($id, $qty)
+    {
+        return getConn()->query("UPDATE product SET stock='$qty' WHERE id='$id'");
+    }
 }
